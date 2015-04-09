@@ -1,0 +1,16 @@
+{
+  "name": "flancer32/mage_ext_api_pp_sdk",
+  "type": "magento-module",
+  "license": "MIT",
+  "homepage": "https://github.com/flancer32/mage_ext_api_pp_sdk",
+  "description": "Magento extension ot use PayPal PHP SDK (https://github.com/paypal/PayPal-PHP-SDK).",
+  "authors": [
+    {
+      "name": "Alex Gusev",
+      "email": "alex@flancer64.com"
+    }
+  ],
+  "require": {
+    "paypal/rest-api-sdk-php": "1.3.2"
+  }
+}

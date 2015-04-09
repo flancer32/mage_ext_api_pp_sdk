@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2015, "F. Lancer"
+ * All rights reserved.
+ */
+-->
+<config>
+    <modules>
+        <Flancer32_PayPalApi>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Flancer32_PayPalApi>
+    </modules>
+</config>

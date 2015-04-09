@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2015, "F. Lancer"
+ * All rights reserved.
+ */
+-->
+<config>
+	<modules>
+		<Flancer32_PayPalApi>
+			<version>0.0.1</version>
+		</Flancer32_PayPalApi>
+	</modules>
+	<global>
+		<helpers>
+			<!-- Default helper for module (prevents errors like "Class 'Namespace_Module_Helper_Data' not found in") -->
+			<flancer32_ppapi_helper>
+				<class>Flancer32_PayPalApi_Helper</class>
+			</flancer32_ppapi_helper>
+		</helpers>
+		<models>
+			<flancer32_ppapi_model>
+				<class>Flancer32_PayPalApi_Model</class>
+			</flancer32_ppapi_model>
+		</models>
+	</global>
+</config>
