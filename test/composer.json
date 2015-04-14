@@ -15,9 +15,11 @@
     }
   ],
   "require": {
-    "bragento/magento-composer-installer": "~1",
+    "composer/composer": "1.0.0-alpha9",
+    "magento-hackathon/magento-composer-installer": "*",
+    "magento-hackathon/composer-command-integrator": "*",
     "magento/core": "~1.9",
-    "flancer32/mage_ext_api_ips": "dev-master"
+    "flancer32/mage_ext_api_pp_sdk": "dev-master"
   },
   "extra": {
     "magento-root-dir": "mage",
