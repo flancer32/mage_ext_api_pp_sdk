@@ -1,4 +1,3 @@
-rm mage\app\etc\local.xml
 php mage\install.php ^
 --license_agreement_accepted "yes" ^
 --locale "en_US" ^
