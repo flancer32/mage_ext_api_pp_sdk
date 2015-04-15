@@ -4,6 +4,7 @@ Magento extension ot use [PayPal PHP SDK](https://github.com/paypal/PayPal-PHP-S
 ## Installation
 
 Add to your `composer.json`:
+
     {
       "repositories": [
         {
