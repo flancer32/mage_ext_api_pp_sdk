@@ -1,5 +1,5 @@
 # mage_ext_api_pp_sdk
-Magento extension ot use [PayPal PHP SDK](https://github.com/paypal/PayPal-PHP-SDK).
+Magento extension that adopts [PayPal PHP SDK](https://github.com/paypal/PayPal-PHP-SDK) classes to be used in Magento classes.
 
 ## Installation
 
