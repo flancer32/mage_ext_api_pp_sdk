@@ -16,6 +16,7 @@
   ],
   "require": {
     "composer/composer": "1.0.0-alpha9",
+    "symfony/console": "2.5",
     "magento-hackathon/magento-composer-installer": "*",
     "magento-hackathon/composer-command-integrator": "*@dev",
     "magento/core": "~1.9",
