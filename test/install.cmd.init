@@ -8,10 +8,10 @@ php mage\install.php ^
 --db_name "mage_api_pp" ^
 --db_user "mage_api_pp" ^
 --db_pass "..." ^
---url "http://paypal_api.local/" ^
+--url "http://paypal_api.local.net/" ^
 --use_rewrites "no" ^
 --use_secure "no" ^
---secure_base_url "http://paypal_api.local/" ^
+--secure_base_url "http://paypal_api.local.net/" ^
 --use_secure_admin "no" ^
 --admin_lastname "Admin" ^
 --admin_firstname "Test" ^
