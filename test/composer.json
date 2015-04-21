@@ -16,8 +16,9 @@
   ],
   "require": {
     "composer/composer": "1.0.0-alpha9",
+    "symfony/console": "2.5",
     "magento-hackathon/magento-composer-installer": "*",
-    "magento-hackathon/composer-command-integrator": "*",
+    "magento-hackathon/composer-command-integrator": "*@dev",
     "magento/core": "~1.9",
     "flancer32/mage_ext_api_pp_sdk": "dev-master"
   },
@@ -26,5 +27,6 @@
     "magento-deploystrategy": "symlink",
     "magento-force": "override",
     "auto-append-gitignore": false
-  }
+  },
+  "minimum-stability": "dev"
 }
