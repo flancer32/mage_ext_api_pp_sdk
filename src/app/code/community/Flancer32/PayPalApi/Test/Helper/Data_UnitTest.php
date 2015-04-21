@@ -8,9 +8,9 @@
  */
 use Flancer32_PayPalApi_Config as Config;
 
-include_once('phpunit_bootstrap.php');
+include_once('../phpunit_bootstrap.php');
 
-class Flancer32_PayPalApi_Test_Config_UnitTest extends PHPUnit_Framework_TestCase
+class Flancer32_PayPalApi_Test_Helper_Data_UnitTest extends PHPUnit_Framework_TestCase
 {
 
     public function test_helper()

@@ -10,7 +10,8 @@
  *
  * User: Alex Gusev <alex@flancer64.com>
  */
-class Flancer32_PayPalApi_Config {
+class Flancer32_PayPalApi_Config
+{
     /**
      * Itself. Singleton.
      * We should not use static methods (bad testability).
@@ -24,8 +25,9 @@ class Flancer32_PayPalApi_Config {
      *
      * @return Flancer32_PayPalApi_Config
      */
-    public static function  get() {
-        if(is_null(self::$_instance)) {
+    public static function  get()
+    {
+        if (is_null(self::$_instance)) {
             self::$_instance = new Flancer32_PayPalApi_Config();
         }
         return self::$_instance;
@@ -36,7 +38,20 @@ class Flancer32_PayPalApi_Config {
      *
      * @return Flancer32_PayPalApi_Helper_Data
      */
-    public function helper() {
+    public function helper()
+    {
         return Mage::helper('flancer32_ppapi_helper');
+    }
+
+    /**
+     * Get path to PayPal PHP SDK from system configuration.
+     *
+     * @param null $store
+     * @return string
+     */
+    public function sysPathToSdk($store = null)
+    {
+        $result = (string)Mage::getStoreConfig('dev/flancer32_ppapi/path', $store);
+        return $result;
     }
 }

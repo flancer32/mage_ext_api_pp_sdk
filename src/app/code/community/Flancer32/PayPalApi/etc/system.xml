@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright (c) 2015, "F. Lancer"
+ * All rights reserved.
+ */
+-->
+<config>
+    <!-- Add new group to "System / Configuration / Advanced / Developer" -->
+    <sections>
+        <dev>
+            <tab>advanced</tab>
+            <groups>
+                <!-- "PayPal SDK" group -->
+                <flancer32_ppapi translate="label" module="flancer32_ppapi_helper">
+                    <label>PayPal PHP SDK</label>
+                    <frontend_type>text</frontend_type>
+                    <!--<frontend_model>adminhtml/system_config_form_fieldset_modules_disableOutput</frontend_model>-->
+                    <sort_order>1024</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <path translate="label">
+                            <label>Path to SDK</label>
+                            <comment>Absolute path to PayPal PHP SDK root (if no composer deployment is used).</comment>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </path>
+                    </fields>
+                </flancer32_ppapi>
+            </groups>
+        </dev>
+    </sections>
+</config>
