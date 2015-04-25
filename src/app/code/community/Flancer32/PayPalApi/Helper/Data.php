@@ -10,20 +10,25 @@ use Flancer32_PayPalApi_Config as Config;
  */
 class Flancer32_PayPalApi_Helper_Data extends Mage_Core_Helper_Abstract
 {
+    private static $_isClassLoaderProcessed = false;
+
     /**
      * Init class loader to load PayPal classes from ./vendor/ catalog (composer scheme) or using path to SDK lib
      * directory.
      */
     public function initClassLoader()
     {
-        $cfg = Config::get();
-        $path = $cfg->sysPathToSdk();
-        if ($path && is_dir($path)) {
-            /* SDK should be loaded from external path */
-            $this->_initClassLoaderFromCfgPath($path);
-        } else {
-            /* SDK should be loaded from composer's vendor directory */
-            $this->_initClassLoaderFromVendor();
+        if (!self::$_isClassLoaderProcessed) {
+            self::$_isClassLoaderProcessed = true;
+            $cfg = Config::get();
+            $path = $cfg->sysPathToSdk();
+            if ($path && is_dir($path)) {
+                /* SDK should be loaded from external path */
+                $this->_initClassLoaderFromCfgPath($path);
+            } else {
+                /* SDK should be loaded from composer's vendor directory */
+                $this->_initClassLoaderFromVendor();
+            }
         }
     }
 
@@ -37,6 +42,8 @@ class Flancer32_PayPalApi_Helper_Data extends Mage_Core_Helper_Abstract
         if (is_dir($path . DS . 'PayPal')) {
             $ini_set = ini_get('include_path') . PS . $path;
             ini_set('include_path', $ini_set);
+        } else {
+            Mage::throwException("Cannot find ./PayPal/ folder in '$path'. PayPal PHP SDK cannot be used.");
         }
     }
 
@@ -46,6 +53,7 @@ class Flancer32_PayPalApi_Helper_Data extends Mage_Core_Helper_Abstract
     private function _initClassLoaderFromVendor()
     {
         if (!class_exists('Composer\\Autoload\\ClassLoader', false)) {
+            $found = false;
             // Composer's vendor root folder
             $vendorRoot = 'vendor';
             // Autoloader file relative to the vendor folder.
@@ -81,10 +89,14 @@ class Flancer32_PayPalApi_Helper_Data extends Mage_Core_Helper_Abstract
                     if ($varien) {
                         spl_autoload_register($varien, true, true);
                     }
+                    $found = true;
                     break;
                 } else {
                     $path = dirname($path);
                 }
+            }
+            if (!$found) {
+                Mage::throwException("Cannot find 'autoload.php' file in ./vendor/ directory, PayPal PHP SDK cannot be used. Please properly install Flancer32_PayPalApi module (https://github.com/flancer32/mage_ext_api_pp_sdk).");
             }
         }
     }
