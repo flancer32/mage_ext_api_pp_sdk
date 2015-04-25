@@ -22,8 +22,10 @@
                     <show_in_store>1</show_in_store>
                     <fields>
                         <path translate="label">
-                            <label>Path to SDK</label>
-                            <comment>Absolute path to PayPal PHP SDK root (if no composer deployment is used).</comment>
+                            <label>Path to SDK lib</label>
+                            <comment>Absolute path to PayPal PHP SDK ./lib directory (C:\PayPal-PHP-SDK-master\lib);
+                                leave empty if composer deployment is used.
+                            </comment>
                             <frontend_type>text</frontend_type>
                             <sort_order>2</sort_order>
                             <show_in_default>1</show_in_default>
